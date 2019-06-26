@@ -23,6 +23,6 @@ echo ""
 echo -e "\nbuild docker hadoop image\n"
 
 # rebuild kiwenlau/hadoop image
-sudo docker build -t lc/hadoop:1.0 .
+sudo docker build -t registry.cn-hangzhou.aliyuncs.com/lcts/hadoop:1.0 .
 
 echo ""
