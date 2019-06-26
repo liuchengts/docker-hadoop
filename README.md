@@ -5,8 +5,14 @@
 * 增加了3.x版本的兼容配置
 
 # 使用步骤
-## 创建网络 sudo docker network create --driver=bridge hadoop
-## 下载源代码 git clone https://github.com/liuchengts/docker-hadoop.git
+## 创建网络 
+```
+ sudo docker network create --driver=bridge hadoop
+```
+## 下载源代码 
+```
+ git clone https://github.com/liuchengts/docker-hadoop.git
+```
 ## 获取镜像有2种方式:
 * 从仓库拉取 
 ```
