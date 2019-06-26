@@ -11,10 +11,10 @@ fi
 
 # change slaves file
 i=1
-rm docker-config/workers
+rm docker-config/hadoop/workers
 while [[ ${i} -lt ${N} ]]
 do
-	echo "hadoop-slave$i" >> docker-config/workers
+	echo "hadoop-slave$i" >> docker-config/hadoop/workers
 	((i++))
 done 
 
