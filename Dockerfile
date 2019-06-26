@@ -23,7 +23,6 @@ ENV PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 #安装必要的工具
 RUN apt-get update \
     && apt-get install -y axel vim openssh-server tar \
-#    && rpm -ivh http://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/a/$AXEL.el7.x86_64.rpm \
     #下载sunjdk
    && axel -a -n $AXELT http://pubqn.ayouran.com/$JDK  \
    # 安装jdk
@@ -44,7 +43,6 @@ RUN apt-get update \
     && ssh-keygen -t rsa -f ~/.ssh/id_rsa -P '' \
     #配置本机免密登录
     && cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys \
-#    && cp -f ssh/ssh_config /etc/ssh \
     && mv ssh/ssh_config ~/.ssh/config \
     #清理
     && rm -rf  hadoop ssh $HADOOP $JDK \
