@@ -18,12 +18,19 @@
 ```
 ## 默认是1主2从总共3个节点 如果需要更多节点 请先执行 
 ```
- ./resize-cluster.sh
- ```
-## 创建容器，执行 
+./resize-cluster.sh 5
+```
+* 指定参数> 1：2,3 ..
+* 这个脚本只是用不同的从属文件重建hadoop镜像，以节点名称当做容器名称
+## 创建容器，执行 如果需要更多节点 可增加执行参数
 ```
 ./start-container.sh
+或
+./start-container.sh 5
 ```
+* 指定参数> 1：2,3 ..
+* 这个脚本只是用不同的从属文件重建hadoop镜像，以节点名称当做容器名称
+
 **output:**
 ```
 start hadoop-master container...
@@ -55,32 +62,4 @@ Docker    1
 Hadoop    1
 Hello    2
 ```
-
-### Arbitrary size Hadoop cluster
-
-##### 1. pull docker images and clone github repository
-
-do 1~3 like section A
-
-##### 2. rebuild docker image
-
-```
-sudo ./resize-cluster.sh 5
-```
-- specify parameter > 1: 2, 3..
-- this script just rebuild hadoop image with different **slaves** file, which pecifies the name of all slave nodes
-
-
-##### 3. start container
-
-```
-sudo ./start-container.sh 5
-```
-- use the same parameter as the step 2
-
-##### 4. run hadoop cluster 
-
-do 5~6 like section A
-
-
 
