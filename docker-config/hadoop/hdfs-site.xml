@@ -1,17 +1,25 @@
 <?xml version="1.0"?>
 <configuration>
+    <!--NameNode元数据存放位置，默认存放在${hadoop.tmp.dir}/dfs/name目录-->
     <property>
         <name>dfs.namenode.name.dir</name>
         <value>file:///root/hdfs/namenode</value>
         <description>NameNode directory for namespace and transaction logs storage.</description>
     </property>
+    <!--DataNode在本地磁盘存放block的位置，可以使用逗号分隔的目录列表，默认存放在${hadoop.tmp.dir}/dfs/data目录-->
     <property>
         <name>dfs.datanode.data.dir</name>
         <value>file:///root/hdfs/datanode</value>
         <description>DataNode directory</description>
     </property>
+    <!--在文件被下入的时候，每一块将要被复制多少份，默认是3，单主机设置1就可以了-->
     <property>
         <name>dfs.replication</name>
         <value>2</value>
+    </property>
+    <!--标识是否要检查权限，默认是true，设置false则允许每个人都可以存取文件-->
+    <property>
+        <name>dfs.permissions</name>
+        <value>false</value>
     </property>
 </configuration>

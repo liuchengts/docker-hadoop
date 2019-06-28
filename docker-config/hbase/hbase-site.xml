@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+/**
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<configuration>
+    <!--集群的地址列表，使用逗号分割开-->
+    <property>
+        <name>hbase.zookeeper.quorum</name>
+        <value>hadoop-master</value>
+    </property>
+    <!--快照的存储位置-->
+    <property>
+        <name>hbase.zookeeper.property.dataDir</name>
+        <value>/usr/local//hbase/zkdata/tmp</value>
+    </property>
+    <!--本地文件系统的临时文件夹-->
+    <property>
+        <name>hbase.tmp.dir</name>
+        <value>/usr/local//hbase/tmp</value>
+    </property>
+    <!--regionserver的共享目录，用来持久化HBase-->
+    <property>
+        <name>hbase.rootdir</name>
+        <value>hdfs://hadoop-master:9000/hbase</value>
+    </property>
+    <!--运行模式，false表示单机模式，true标识分布式模式-->
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+    </property>
+</configuration>

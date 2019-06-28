@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <configuration>
+    <!--HDFS与本地磁盘的临时文件，是文件系统依赖的基本配置，
+    很多配置路径都依赖它，它的默认位置在/tmp/{$user}下面。
+    需要指定一个持久化路径，否则系统tmp被自动清掉以后会出fs.defaultFS是默认文件系统的名称，
+    通常是NameNode的hostname:port-->
     <property>
         <name>fs.defaultFS</name>
         <value>hdfs://hadoop-master:9000/</value>
